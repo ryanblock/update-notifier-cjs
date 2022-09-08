@@ -1,4 +1,5 @@
-import updateNotifier from './index.js';
+'use strict';
+const updateNotifier = require('.');
 
 // Run: $ node example
 
@@ -9,8 +10,7 @@ import updateNotifier from './index.js';
 updateNotifier({
 	pkg: {
 		name: 'public-ip',
-		version: '0.9.2',
+		version: '0.9.2'
 	},
-	updateCheckInterval: 0,
-})
-	.notify();
+	updateCheckInterval: 0
+}).notify();
