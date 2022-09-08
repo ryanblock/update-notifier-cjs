@@ -2,13 +2,13 @@
 const {spawn} = require('child_process');
 const path = require('path');
 const {format} = require('util');
+const latestVersion = require('./vendor/latest-version');
 const importLazy = require('import-lazy')(require);
 
 const configstore = importLazy('configstore');
 const chalk = importLazy('chalk');
 const semver = importLazy('semver');
 const semverDiff = importLazy('semver-diff');
-const latestVersion = importLazy('latest-version');
 const isNpm = importLazy('is-npm');
 const isInstalledGlobally = importLazy('is-installed-globally');
 const isYarnGlobal = importLazy('is-yarn-global');
@@ -103,7 +103,7 @@ class UpdateNotifier {
 
 	async fetchInfo() {
 		const {distTag} = this.options;
-		const latest = await latestVersion()(this.packageName, {version: distTag});
+		const latest = await latestVersion(this.packageName, {version: distTag});
 
 		return {
 			latest,

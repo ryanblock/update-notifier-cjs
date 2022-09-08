@@ -1,9 +1,9 @@
 {
-	"name": "update-notifier",
+	"name": "update-notifier-cjs",
 	"version": "5.1.0",
 	"description": "Update notifications for your CLI app",
 	"license": "BSD-2-Clause",
-	"repository": "yeoman/update-notifier",
+	"repository": "ryanblock/update-notifier-cjs",
 	"funding": "https://github.com/yeoman/update-notifier?sponsor=1",
 	"author": {
 		"name": "Sindre Sorhus",
@@ -11,10 +11,10 @@
 		"url": "https://sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=10"
+		"node": ">=14"
 	},
 	"scripts": {
-		"test": "xo && ava --timeout=20s --serial"
+		"test": "ava --timeout=20s --serial"
 	},
 	"files": [
 		"index.js",
@@ -37,6 +37,7 @@
 		"boxen": "^5.0.0",
 		"chalk": "^4.1.0",
 		"configstore": "^5.0.1",
+		"got": "^11.8.5",
 		"has-yarn": "^2.1.0",
 		"import-lazy": "^2.1.0",
 		"is-ci": "^2.0.0",
@@ -45,7 +46,9 @@
 		"is-yarn-global": "^0.3.0",
 		"latest-version": "^5.1.0",
 		"pupa": "^2.1.1",
-		"semver": "^7.3.4",
+		"registry-auth-token": "^5.0.1",
+		"registry-url": "^5.1.0",
+		"semver": "^7.3.7",
 		"semver-diff": "^3.1.1",
 		"xdg-basedir": "^4.0.0"
 	},
@@ -54,7 +57,6 @@
 		"clear-module": "^4.1.1",
 		"fixture-stdout": "^0.2.1",
 		"mock-require": "^3.0.3",
-		"strip-ansi": "^6.0.0",
-		"xo": "^0.37.1"
+		"strip-ansi": "^6.0.0"
 	}
 }
