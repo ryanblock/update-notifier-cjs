@@ -1,10 +1,9 @@
 {
 	"name": "update-notifier-cjs",
 	"version": "5.1.0",
-	"description": "Update notifications for your CLI app",
+	"description": "Update notifications for your CLI app, maintained in CJS",
 	"license": "BSD-2-Clause",
 	"repository": "ryanblock/update-notifier-cjs",
-	"funding": "https://github.com/yeoman/update-notifier?sponsor=1",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
