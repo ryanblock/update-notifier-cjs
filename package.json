@@ -17,7 +17,8 @@
 	},
 	"files": [
 		"index.js",
-		"check.js"
+		"check.js",
+		"vendor/*"
 	],
 	"keywords": [
 		"npm",
