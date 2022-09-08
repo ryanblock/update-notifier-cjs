@@ -26,7 +26,7 @@ $ npm install update-notifier
 ### Simple
 
 ```js
-const updateNotifier = require('update-notifier');
+const updateNotifier = require('update-notifier-cjs');
 const pkg = require('./package.json');
 
 updateNotifier({pkg}).notify();
@@ -35,7 +35,7 @@ updateNotifier({pkg}).notify();
 ### Comprehensive
 
 ```js
-const updateNotifier = require('update-notifier');
+const updateNotifier = require('update-notifier-cjs');
 const pkg = require('./package.json');
 
 // Checks for available update and returns an instance
