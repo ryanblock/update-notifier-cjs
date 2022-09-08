@@ -1,6 +1,6 @@
-# update-notifier
+# update-notifier-cjs
 
-> Update notifications for your CLI app
+> Update notifications for your CLI app, maintained in CJS
 
 ![](screenshot.png)
 
