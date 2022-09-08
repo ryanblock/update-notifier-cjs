@@ -1,6 +1,6 @@
 # update-notifier-cjs
 
-> Update notifications for your CLI app, maintained in CJS
+> Update notifications for your CLI app, maintained in CommonJS (CJS)
 
 ![](screenshot.png)
 
@@ -18,7 +18,7 @@ Inform users of your package of updates in a non-intrusive way.
 ## Install
 
 ```
-$ npm install update-notifier
+$ npm install update-notifier-cjs
 ```
 
 ## Usage
@@ -74,7 +74,7 @@ if (notifier.update) {
 Whenever you initiate the update notifier and it's not within the interval threshold, it will asynchronously check with npm in the background for available updates, then persist the result. The next time the notifier is initiated, the result will be loaded into the `.update` property. This prevents any impact on your package startup performance.
 The update check is done in a unref'ed [child process](https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options). This means that if you call `process.exit`, the check will still be performed in its own process.
 
-The first time the user runs your app, it will check for an update, and even if an update is available, it will wait the specified `updateCheckInterval` before notifying the user. This is done to not be annoying to the user, but might surprise you as an implementer if you're testing whether it works. Check out [`example.js`](example.js) to quickly test out `update-notifier` and see how you can test that it works in your app.
+The first time the user runs your app, it will check for an update, and even if an update is available, it will wait the specified `updateCheckInterval` before notifying the user. This is done to not be annoying to the user, but might surprise you as an implementer if you're testing whether it works. Check out [`example.js`](example.js) to quickly test out `update-notifier-cjs` and see how you can test that it works in your app.
 
 ## API
 
@@ -209,15 +209,3 @@ There are a bunch projects using it:
 - [Node GH](https://github.com/node-gh/gh) - GitHub command line tool
 
 [And 2700+ more…](https://www.npmjs.org/browse/depended/update-notifier)
-
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-update_notifier?utm_source=npm-update-notifier&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
