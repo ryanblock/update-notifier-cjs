@@ -1,6 +1,6 @@
 {
 	"name": "update-notifier-cjs",
-	"version": "5.1.4",
+	"version": "5.1.5",
 	"description": "Update notifications for your CLI app, maintained in CommonJS (CJS)",
 	"license": "BSD-2-Clause",
 	"repository": "ryanblock/update-notifier-cjs",
