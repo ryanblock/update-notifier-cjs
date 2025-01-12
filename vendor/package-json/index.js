@@ -1,5 +1,7 @@
 'use strict';
-require('isomorphic-fetch');
+if (!fetch) {
+	require('isomorphic-fetch');
+}
 const registryUrl = require('registry-url');
 const registryAuthToken = require('registry-auth-token');
 const semver = require('semver');
