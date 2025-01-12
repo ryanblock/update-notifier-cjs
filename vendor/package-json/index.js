@@ -45,7 +45,7 @@ const packageJson = async (packageName, options) => {
 
 	let data;
 	try {
-		data = await fetch(packageUrl, { keepAlive: true, headers }).then(r => r.json());
+		data = await fetch(packageUrl, { keepAlive: true, keepalive: true, headers }).then(r => r.json());
 	} catch (error) {
 		if (error.response.statusCode === 404) {
 			throw new PackageNotFoundError(packageName);
