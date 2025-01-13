@@ -45,38 +45,33 @@ jobs:
     - name: Test
       run: npm test
 
-  # # Publish to npm
-  # publish:
-  #   # Setup
-  #   needs: build
-  #   if: startsWith(github.ref, 'refs/tags/v')
-  #   runs-on: ubuntu-latest
+  # Publish to npm
+  publish:
+    # Setup
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
 
-  #   # Go
-  #   steps:
-  #     - name: Check out repo
-  #       uses: actions/checkout@v4
+    # Go
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
 
-  #     - name: Set up Node.js
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: lts/*
-  #         registry-url: https://registry.npmjs.org/
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org/
 
-  #     # Publish to npm
-  #     - name: Publish client@RC to npm
-  #       if: contains(github.ref, 'RC')
-  #       run: npm publish --tag RC
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Publish to npm
+      - name: Publish client@RC to npm
+        if: contains(github.ref, 'RC')
+        run: npm publish --tag RC
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  #     - name: Publish client@latest to npm
-  #       if: contains(github.ref, 'RC') == false #'!contains()'' doesn't work lol
-  #       run: npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       with:
-  #         webhook: ${{ secrets.DISCORD_WEBHOOK }}
-  #         title: "npm publish"
-  #         color: 0x222222
-  #         username: GitHub Actions
+      - name: Publish client@latest to npm
+        if: contains(github.ref, 'RC') == false #'!contains()'' doesn't work lol
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
