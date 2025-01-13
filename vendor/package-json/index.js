@@ -1,5 +1,7 @@
 'use strict';
-if (!fetch) {
+const ver = Number(process.version.split('.')[0].replace(/v/,''))
+const old = ver < 18
+if (old || !fetch) {
 	require('isomorphic-fetch');
 }
 const registryUrl = require('registry-url');
