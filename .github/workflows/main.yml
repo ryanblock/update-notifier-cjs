@@ -15,7 +15,8 @@ jobs:
     strategy:
       matrix:
         # Actions macOS switched to ARM, so 14.x no longer runs there, unfortunately
-        node-version: [ 16.x, 18.x, 20.x, 22.x ]
+        # Tests suddenly won't run in 22.x, I am **so incredibly surprised** that the original author's test lib is just an endless trail of breaking changes
+        node-version: [ 16.x, 18.x, 20.x ]
         os: [ windows-latest, ubuntu-latest, macOS-latest ]
 
     # Go
